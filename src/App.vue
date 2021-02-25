@@ -1,32 +1,33 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/all">All</router-link> |
+      <router-link to="/complete">complete</router-link> |
+      <router-link to="/active">active</router-link>
     </div>
     <router-view/>
+    <todoInput />
+    <div>
+      <todoListItem v-for="index in todoIndex" :key="index" :index="index"/>
+    </div>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import todoInput from '@/components/todoInput/index.vue'
+import todoListItem from '@/components/todoListItem/index.vue'
+export default {
+  components:{
+    todoInput,
+    todoListItem
+  },
+  computed:{
+    todoIndex(){
+      return this.$store.getters.todoIndex
+    }
+  },
+  mounted(){
+    this.$store.dispatch('initTodos')
+  }
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>

@@ -49,12 +49,12 @@ export default new Vuex.Store({
       state.todos.push(data)
       LS.save(state.todos)
     },
-    deleteTodos(state,index){
+    removeTodos(state,index){
       state.todos.splice(index,1)
       LS.save(state.todos)
     },
     updateTodos(state,{index,data}){
-      state.todos[index]=data
+      Vue.set(state.todos,index,data)
       LS.save(state.todos)
     }
   },

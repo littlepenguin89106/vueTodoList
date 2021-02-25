@@ -1,5 +1,16 @@
 <div>
-    <input type="checkbox" />
-    <label>{{todo.context}}</label>
-    <button @click="destroyHandler"></button>
+    <input 
+        type="text" 
+        v-model.trim="edit"
+        v-if="edit != null"
+        v-focus 
+        @keyup.enter="submitHandler"
+        @keyup.esc="cancelHandler"
+        @blur="cancelHandler"
+    />
+    <template v-else>
+        <input type="checkbox" v-model="complete"/>
+        <label @dblclick="editHandler">{{todo.content}}</label>
+        <button @click="destroyHandler"></button>    
+    </template>
 </div>

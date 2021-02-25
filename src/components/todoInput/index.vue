@@ -15,7 +15,7 @@ export default {
                 this.$store.commit(
                     'addTodos',
                     {
-                        context:this.todo,
+                        content:this.todo,
                         complete:false
                     }
                 )

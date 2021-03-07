@@ -2,6 +2,7 @@
 
 <script>
 export default {
+    name:'todoListItem',
     data(){
         return {
             edit:null

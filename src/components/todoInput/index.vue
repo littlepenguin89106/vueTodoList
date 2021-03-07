@@ -1,6 +1,7 @@
 <template src="./template.html"></template>
 <script>
 export default {
+    name:'todoInput',
     data(){
         return {
             todo:''

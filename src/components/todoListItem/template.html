@@ -1,16 +1,24 @@
 <div>
-    <input 
-        type="text" 
+    <v-text-field
+        placeholder="modify todo"
+        solo
+
         v-model.trim="edit"
         v-if="edit != null"
-        v-focus 
+        v-focus
         @keyup.enter="submitHandler"
         @keyup.esc="cancelHandler"
         @blur="cancelHandler"
     />
     <template v-else>
-        <input type="checkbox" v-model="complete"/>
-        <label @dblclick="editHandler">{{todo.content}}</label>
-        <button @click="destroyHandler"></button>    
+        <v-card>
+            <v-row align="center" class="d-flex justify-center">
+                <v-checkbox v-model="complete"/>
+                <div @dblclick="editHandler" class="col-8 text-truncate">{{todo.content}}</div>
+                <v-btn icon @click="destroyHandler">
+                    <v-icon>mdi-delete</v-icon>
+                </v-btn>    
+            </v-row>
+        </v-card>
     </template>
 </div>

@@ -8,12 +8,6 @@ import vuetify from './plugins/vuetify';
 sync(store, router)
 Vue.config.productionTip = false
 
-Vue.directive('focus', {
-  inserted: function (el) {
-    el.focus()
-  }
-})
-
 new Vue({
   store,
   router,

@@ -1,24 +1,9 @@
-# todolist
+# todoList
+for vue learning practice
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Support operation:
+- create (put string in the input and press Enter key)
+- check if complete 
+- filter(it will filt task by current finish state)
+- delete (if you don't want the task anymore)
+- modify (double click the task item to modify)
